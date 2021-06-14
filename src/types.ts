@@ -12,6 +12,10 @@ export enum CardFields {
   CardHolderName,
   Expiration,
   CVV,
+  BillingAddress,
+  BillingCity,
+  BillingState,
+  BillingZipCode,
 }
 
 export type TranslationsNonNull = {
@@ -21,11 +25,23 @@ export type TranslationsNonNull = {
   mmYY: string
   expiration: string
   securityCode: string
+  billingAddress: string
+  billingState: string
+  billingCity: string
+  billingZipCode: string
   next: string
   done: string
   cardNumberRequired: string
   cardNumberInvalid: string
   cardHolderNameRequired: string
+  billingAddressRequired: string
+  billingStateRequired: string
+  billingCityRequired: string
+  billingZipCodeRequired: string
+  cityRequired: string
+  stateRequired: string
+  countryRequired: string
+  zipCodeRequired: string
   cardHolderNameInvalid: string
   expirationRequired: string
   expirationInvalid: string

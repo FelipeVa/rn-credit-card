@@ -49,6 +49,10 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
   const cardNumberRef = useRef<TextInput>(null)
   const expirationRef = useRef<TextInput>(null)
   const cvvRef = useRef<TextInput>(null)
+  const billingAddressRef = useRef<TextInput>(null)
+  const billingStateRef = useRef<TextInput>(null)
+  const billingCityRef = useRef<TextInput>(null)
+  const billingZipCodeRef = useRef<TextInput>(null)
 
   const [focusedField, setFocusedField] = useState<CardFields | null>(null)
 
@@ -70,9 +74,13 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
   async function goNext() {
     if (focusedField === null) return
 
-    const field = ['cardNumber', 'holderName', 'expiration', 'cvv'][
-      focusedField
-    ]
+    const field = [
+      'cardNumber',
+      'holderName',
+      'expiration',
+      'cvv',
+      'billing_address',
+    ][focusedField]
 
     if (isHorizontal) {
       const result = await trigger(field)
@@ -80,16 +88,23 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
       scrollRef.current?.scrollTo({ x: (focusedField + 1) * inputWidth })
     }
 
-    if (focusedField === CardFields.CVV) {
+    if (focusedField === CardFields.BillingZipCode) {
       setFocusedField(null)
       setIsHorizontal(false)
       Keyboard.dismiss()
       return
     }
 
-    const ref = [cardNumberRef, holderNameRef, expirationRef, cvvRef][
-      focusedField + 1
-    ]
+    const ref = [
+      cardNumberRef,
+      holderNameRef,
+      expirationRef,
+      cvvRef,
+      billingAddressRef,
+      billingCityRef,
+      billingStateRef,
+      billingZipCodeRef,
+    ][focusedField + 1]
     ref.current?.focus()
   }
 
@@ -210,6 +225,54 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
                 },
               }}
               onFocus={() => setFocusedField(CardFields.CVV)}
+              onValid={goNext}
+            />
+            <FormTextField
+              style={textFieldStyle}
+              ref={billingAddressRef}
+              name="billing_address"
+              label={translations.billingAddress}
+              keyboardType="default"
+              rules={{
+                required: translations.billingAddressRequired,
+              }}
+              onFocus={() => setFocusedField(CardFields.BillingAddress)}
+              onValid={goNext}
+            />
+            <FormTextField
+              style={textFieldStyle}
+              ref={billingStateRef}
+              name="billing_state"
+              label={translations.billingState}
+              keyboardType="default"
+              rules={{
+                required: translations.billingStateRequired,
+              }}
+              onFocus={() => setFocusedField(CardFields.BillingState)}
+              onValid={goNext}
+            />
+            <FormTextField
+              style={textFieldStyle}
+              ref={billingCityRef}
+              name="billing_city"
+              label={translations.billingCity}
+              keyboardType="default"
+              rules={{
+                required: translations.billingCityRequired,
+              }}
+              onFocus={() => setFocusedField(CardFields.BillingCity)}
+              onValid={goNext}
+            />
+            <FormTextField
+              style={textFieldStyle}
+              ref={billingZipCodeRef}
+              name="billing_zip_code"
+              label={translations.billingZipCode}
+              keyboardType="default"
+              rules={{
+                required: translations.billingZipCodeRequired,
+              }}
+              onFocus={() => setFocusedField(CardFields.BillingZipCode)}
               onValid={goNext}
             />
           </View>
