@@ -233,7 +233,7 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
             <FormTextField
               style={textFieldStyle}
               ref={billingAddressRef}
-              name="billing_address"
+              name="billingAddress"
               label={translations.billingAddress}
               keyboardType="default"
               rules={{
@@ -245,7 +245,7 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
             <FormTextField
               style={textFieldStyle}
               ref={billingStateRef}
-              name="billing_state"
+              name="billingState"
               label={translations.billingState}
               keyboardType="default"
               rules={{
@@ -257,7 +257,7 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
             <FormTextField
               style={textFieldStyle}
               ref={billingCityRef}
-              name="billing_city"
+              name="billingCity"
               label={translations.billingCity}
               keyboardType="default"
               rules={{
@@ -269,7 +269,7 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
             <FormTextField
               style={textFieldStyle}
               ref={billingZipCodeRef}
-              name="billing_zip_code"
+              name="billingZipCode"
               label={translations.billingZipCode}
               keyboardType="default"
               rules={{
