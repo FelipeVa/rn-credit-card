@@ -284,7 +284,7 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
           <Button
             style={[styles.button, overrides?.button]}
             title={
-              focusedField === CardFields.CVV
+              focusedField === CardFields.BillingZipCode
                 ? translations.done
                 : translations.next
             }
