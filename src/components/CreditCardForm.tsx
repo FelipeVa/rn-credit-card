@@ -238,11 +238,11 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
               ref={billingAddressRef}
               name="billingAddress"
               label={translations.billingAddress}
-              keyboardType="default"
               rules={{
                 required: translations.billingAddressRequired,
               }}
               onFocus={() => setFocusedField(CardFields.BillingAddress)}
+              autoCorrect={false}
               onSubmitEditing={goNext}
             />
             <View style={styles.row}>
@@ -256,11 +256,11 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
                 ref={billingStateRef}
                 name="billingState"
                 label={translations.billingState}
-                keyboardType="default"
                 rules={{
                   required: translations.billingStateRequired,
                 }}
                 onFocus={() => setFocusedField(CardFields.BillingState)}
+                autoCorrect={false}
                 onSubmitEditing={goNext}
               />
               <FormTextField
@@ -268,11 +268,11 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
                 ref={billingCityRef}
                 name="billingCity"
                 label={translations.billingCity}
-                keyboardType="default"
                 rules={{
                   required: translations.billingCityRequired,
                 }}
                 onFocus={() => setFocusedField(CardFields.BillingCity)}
+                autoCorrect={false}
                 onSubmitEditing={goNext}
               />
             </View>
@@ -281,13 +281,14 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
               ref={billingZipCodeRef}
               name="billingZipCode"
               label={translations.billingZipCode}
-              keyboardType="default"
+              keyboardType="number-pad"
               rules={{
                 required: translations.billingZipCodeRequired,
                 validate: {
                   isValid: (value: string) => {
                     return (
-                      isValidZipCode(value) || translations.billingZipCodeInvalid
+                      isValidZipCode(value) ||
+                      translations.billingZipCodeInvalid
                     )
                   },
                 },
