@@ -47,6 +47,7 @@ export type TranslationsNonNull = {
   expirationInvalid: string
   securityCodeRequired: string
   securityCodeInvalid: string
+  billingZipCodeInvalid: string
 }
 type Partial<T> = {
   [P in keyof T]?: T[P]

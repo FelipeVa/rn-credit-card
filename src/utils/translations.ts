@@ -32,6 +32,7 @@ export function getTranslations(
     expirationInvalid: 'This expiration date looks invalid.',
     securityCodeRequired: 'Security code is required.',
     securityCodeInvalid: 'This security date looks invalid.',
+    billingZipCodeInvalid: 'This zip code looks invalid.',
     ...translations,
   }
 }

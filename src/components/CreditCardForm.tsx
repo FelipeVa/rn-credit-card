@@ -15,6 +15,7 @@ import {
   cardNumberFormatter,
   expirationDateFormatter,
 } from '../utils/formatters'
+import { isValidZipCode } from '../utils/validator'
 import LibraryContext from '../LibraryContext'
 import Button from './Button'
 import CardIcon from './CardIcon'
@@ -242,7 +243,7 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
                 required: translations.billingAddressRequired,
               }}
               onFocus={() => setFocusedField(CardFields.BillingAddress)}
-              onValid={goNext}
+              onSubmitEditing={goNext}
             />
             <View style={styles.row}>
               <FormTextField
@@ -260,7 +261,7 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
                   required: translations.billingStateRequired,
                 }}
                 onFocus={() => setFocusedField(CardFields.BillingState)}
-                onValid={goNext}
+                onSubmitEditing={goNext}
               />
               <FormTextField
                 style={textFieldStyle}
@@ -272,7 +273,7 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
                   required: translations.billingCityRequired,
                 }}
                 onFocus={() => setFocusedField(CardFields.BillingCity)}
-                onValid={goNext}
+                onSubmitEditing={goNext}
               />
             </View>
             <FormTextField
@@ -283,9 +284,16 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
               keyboardType="default"
               rules={{
                 required: translations.billingZipCodeRequired,
+                validate: {
+                  isValid: (value: string) => {
+                    return (
+                      isValidZipCode(value) || translations.billingZipCodeInvalid
+                    )
+                  },
+                },
               }}
               onFocus={() => setFocusedField(CardFields.BillingZipCode)}
-              onValid={goNext}
+              onSubmitEditing={goNext}
             />
           </View>
         </ScrollView>
