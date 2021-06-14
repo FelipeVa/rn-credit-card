@@ -231,7 +231,7 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
               onValid={goNext}
             />
           </View>
-          <View>
+          <View style={{ marginBottom: 36 }}>
             <FormTextField
               style={textFieldStyle}
               ref={billingAddressRef}
@@ -244,9 +244,14 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
               onFocus={() => setFocusedField(CardFields.BillingAddress)}
               onValid={goNext}
             />
-            <View style={{ ...styles.row, marginBottom: 36 }}>
+            <View style={styles.row}>
               <FormTextField
-                style={textFieldStyle}
+                style={[
+                  textFieldStyle,
+                  {
+                    marginRight: isHorizontal ? 0 : 24,
+                  },
+                ]}
                 ref={billingStateRef}
                 name="billingState"
                 label={translations.billingState}
