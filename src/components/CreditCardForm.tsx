@@ -80,6 +80,9 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
       'expiration',
       'cvv',
       'billing_address',
+      'billing_state',
+      'billing_city',
+      'billing_zip_code',
     ][focusedField]
 
     if (isHorizontal) {
