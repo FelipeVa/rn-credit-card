@@ -105,8 +105,8 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
       expirationRef,
       cvvRef,
       billingAddressRef,
-      billingCityRef,
       billingStateRef,
+      billingCityRef,
       billingZipCodeRef,
     ][focusedField + 1]
     ref.current?.focus()
