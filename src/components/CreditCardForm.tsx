@@ -79,10 +79,10 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
       'holderName',
       'expiration',
       'cvv',
-      'billing_address',
-      'billing_state',
-      'billing_city',
-      'billing_zip_code',
+      'billingAddress',
+      'billingState',
+      'billingCity',
+      'billingZipCode',
     ][focusedField]
 
     if (isHorizontal) {
@@ -230,55 +230,55 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
               onFocus={() => setFocusedField(CardFields.CVV)}
               onValid={goNext}
             />
-            <FormTextField
-              style={textFieldStyle}
-              ref={billingAddressRef}
-              name="billingAddress"
-              label={translations.billingAddress}
-              keyboardType="default"
-              rules={{
-                required: translations.billingAddressRequired,
-              }}
-              onFocus={() => setFocusedField(CardFields.BillingAddress)}
-              onValid={goNext}
-            />
-            <FormTextField
-              style={textFieldStyle}
-              ref={billingStateRef}
-              name="billingState"
-              label={translations.billingState}
-              keyboardType="default"
-              rules={{
-                required: translations.billingStateRequired,
-              }}
-              onFocus={() => setFocusedField(CardFields.BillingState)}
-              onValid={goNext}
-            />
-            <FormTextField
-              style={textFieldStyle}
-              ref={billingCityRef}
-              name="billingCity"
-              label={translations.billingCity}
-              keyboardType="default"
-              rules={{
-                required: translations.billingCityRequired,
-              }}
-              onFocus={() => setFocusedField(CardFields.BillingCity)}
-              onValid={goNext}
-            />
-            <FormTextField
-              style={textFieldStyle}
-              ref={billingZipCodeRef}
-              name="billingZipCode"
-              label={translations.billingZipCode}
-              keyboardType="default"
-              rules={{
-                required: translations.billingZipCodeRequired,
-              }}
-              onFocus={() => setFocusedField(CardFields.BillingZipCode)}
-              onValid={goNext}
-            />
           </View>
+          <FormTextField
+            style={textFieldStyle}
+            ref={billingAddressRef}
+            name="billingAddress"
+            label={translations.billingAddress}
+            keyboardType="default"
+            rules={{
+              required: translations.billingAddressRequired,
+            }}
+            onFocus={() => setFocusedField(CardFields.BillingAddress)}
+            onValid={goNext}
+          />
+          <FormTextField
+            style={textFieldStyle}
+            ref={billingStateRef}
+            name="billingState"
+            label={translations.billingState}
+            keyboardType="default"
+            rules={{
+              required: translations.billingStateRequired,
+            }}
+            onFocus={() => setFocusedField(CardFields.BillingState)}
+            onValid={goNext}
+          />
+          <FormTextField
+            style={textFieldStyle}
+            ref={billingCityRef}
+            name="billingCity"
+            label={translations.billingCity}
+            keyboardType="default"
+            rules={{
+              required: translations.billingCityRequired,
+            }}
+            onFocus={() => setFocusedField(CardFields.BillingCity)}
+            onValid={goNext}
+          />
+          <FormTextField
+            style={textFieldStyle}
+            ref={billingZipCodeRef}
+            name="billingZipCode"
+            label={translations.billingZipCode}
+            keyboardType="default"
+            rules={{
+              required: translations.billingZipCodeRequired,
+            }}
+            onFocus={() => setFocusedField(CardFields.BillingZipCode)}
+            onValid={goNext}
+          />
         </ScrollView>
         <Conditional condition={isHorizontal}>
           <Button
