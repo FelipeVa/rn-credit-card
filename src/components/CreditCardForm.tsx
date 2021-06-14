@@ -231,54 +231,58 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
               onValid={goNext}
             />
           </View>
-          <FormTextField
-            style={textFieldStyle}
-            ref={billingAddressRef}
-            name="billingAddress"
-            label={translations.billingAddress}
-            keyboardType="default"
-            rules={{
-              required: translations.billingAddressRequired,
-            }}
-            onFocus={() => setFocusedField(CardFields.BillingAddress)}
-            onValid={goNext}
-          />
-          <FormTextField
-            style={textFieldStyle}
-            ref={billingStateRef}
-            name="billingState"
-            label={translations.billingState}
-            keyboardType="default"
-            rules={{
-              required: translations.billingStateRequired,
-            }}
-            onFocus={() => setFocusedField(CardFields.BillingState)}
-            onValid={goNext}
-          />
-          <FormTextField
-            style={textFieldStyle}
-            ref={billingCityRef}
-            name="billingCity"
-            label={translations.billingCity}
-            keyboardType="default"
-            rules={{
-              required: translations.billingCityRequired,
-            }}
-            onFocus={() => setFocusedField(CardFields.BillingCity)}
-            onValid={goNext}
-          />
-          <FormTextField
-            style={textFieldStyle}
-            ref={billingZipCodeRef}
-            name="billingZipCode"
-            label={translations.billingZipCode}
-            keyboardType="default"
-            rules={{
-              required: translations.billingZipCodeRequired,
-            }}
-            onFocus={() => setFocusedField(CardFields.BillingZipCode)}
-            onValid={goNext}
-          />
+          <View>
+            <FormTextField
+              style={textFieldStyle}
+              ref={billingAddressRef}
+              name="billingAddress"
+              label={translations.billingAddress}
+              keyboardType="default"
+              rules={{
+                required: translations.billingAddressRequired,
+              }}
+              onFocus={() => setFocusedField(CardFields.BillingAddress)}
+              onValid={goNext}
+            />
+            <View style={{ ...styles.row, marginBottom: 36 }}>
+              <FormTextField
+                style={textFieldStyle}
+                ref={billingStateRef}
+                name="billingState"
+                label={translations.billingState}
+                keyboardType="default"
+                rules={{
+                  required: translations.billingStateRequired,
+                }}
+                onFocus={() => setFocusedField(CardFields.BillingState)}
+                onValid={goNext}
+              />
+              <FormTextField
+                style={textFieldStyle}
+                ref={billingCityRef}
+                name="billingCity"
+                label={translations.billingCity}
+                keyboardType="default"
+                rules={{
+                  required: translations.billingCityRequired,
+                }}
+                onFocus={() => setFocusedField(CardFields.BillingCity)}
+                onValid={goNext}
+              />
+            </View>
+            <FormTextField
+              style={textFieldStyle}
+              ref={billingZipCodeRef}
+              name="billingZipCode"
+              label={translations.billingZipCode}
+              keyboardType="default"
+              rules={{
+                required: translations.billingZipCodeRequired,
+              }}
+              onFocus={() => setFocusedField(CardFields.BillingZipCode)}
+              onValid={goNext}
+            />
+          </View>
         </ScrollView>
         <Conditional condition={isHorizontal}>
           <Button
@@ -303,7 +307,6 @@ const styles = StyleSheet.create({
   row: {
     flex: 1,
     flexDirection: 'row',
-    marginBottom: 36,
   },
   textField: {
     marginTop: 24,
