@@ -13,8 +13,8 @@ export enum CardFields {
   Expiration,
   CVV,
   BillingAddress,
-  BillingCity,
   BillingState,
+  BillingCity,
   BillingZipCode,
 }
 
