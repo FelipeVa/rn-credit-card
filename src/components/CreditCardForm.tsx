@@ -281,6 +281,7 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
               ref={billingZipCodeRef}
               name="billingZipCode"
               label={translations.billingZipCode}
+              maxLength={5}
               keyboardType="number-pad"
               rules={{
                 required: translations.billingZipCodeRequired,
