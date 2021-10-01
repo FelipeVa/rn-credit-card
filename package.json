@@ -15,7 +15,6 @@
     "ios",
     "android"
   ],
-  "main": "lib/commonjs/index",
   "scripts": {
     "start": "yarn start",
     "test": "jest",
@@ -29,6 +28,7 @@
     "type": "git",
     "url": "git://github.com/FelipeVa/rn-credit-card.git"
   },
+
   "dependencies": {
     "card-validator": "^8.1.0",
     "react-native-card-flip": "^1.0.7"
@@ -69,6 +69,7 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix"
   },
+  "main": "lib/commonjs/index",
   "react-native": "src/index.ts",
   "module": "lib/module/index.js",
   "types": "lib/typescript/index.d.ts",
@@ -79,13 +80,28 @@
     "!**/__fixtures__",
     "!**/__mocks__"
   ],
-  "react-native-builder-bob": {
+  "@react-native-community/bob": {
     "source": "src",
     "output": "lib",
     "targets": [
-      "commonjs",
-      "module",
-      "typescript"
+      [
+        "commonjs",
+        {
+          "configFile": true
+        }
+      ],
+      [
+        "module",
+        {
+          "configFile": true
+        }
+      ],
+      [
+        "typescript",
+        {
+          "configFile": true
+        }
+      ]
     ]
   },
   "eslintIgnore": [
