@@ -4,7 +4,7 @@ import {
   cardNumberFormatter,
   expirationDateFormatter,
 } from './utils/formatters'
-
+import { getTranslations } from './utils/translations'
 export { default as Button } from './components/Button'
 export { default as Card } from './components/Card'
 
@@ -16,6 +16,7 @@ export {
   FormModel,
   cardNumberFormatter,
   expirationDateFormatter,
+  getTranslations,
 }
 
 export default CreditCardForm
