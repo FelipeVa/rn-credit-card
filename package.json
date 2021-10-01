@@ -51,7 +51,7 @@
     "metro-react-native-babel-preset": "^0.66.0",
     "react": "^17.0.2",
     "react-hook-form": "^7.3.4",
-    "react-native-builder-bob": "^0.17.1",
+    "react-native-builder-bob": "^0.18.2",
     "react-test-renderer": "^17.0.1",
     "typescript": "~4.2.4"
   },
@@ -79,7 +79,7 @@
     "!**/__fixtures__",
     "!**/__mocks__"
   ],
-  "@react-native-community/bob": {
+  "react-native-builder-bob": {
     "source": "src",
     "output": "lib",
     "targets": [
