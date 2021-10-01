@@ -1,4 +1,5 @@
 import CreditCardForm from './components/CreditCardForm'
+import CardIcon from './components/CardIcon'
 import LibraryContext from './LibraryContext'
 import {
   cardNumberFormatter,
@@ -17,6 +18,7 @@ export {
   cardNumberFormatter,
   expirationDateFormatter,
   getTranslations,
+  CardIcon,
 }
 
 export default CreditCardForm
