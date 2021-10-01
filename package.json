@@ -1,6 +1,6 @@
 {
   "name": "@felipeva/rn-credit-card",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "Credit card form for react native",
   "license": "MIT",
   "keywords": [
@@ -28,7 +28,6 @@
     "type": "git",
     "url": "git://github.com/FelipeVa/rn-credit-card.git"
   },
-
   "dependencies": {
     "card-validator": "^8.1.0",
     "react-native-card-flip": "^1.0.7"
